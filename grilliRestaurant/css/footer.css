@@ -1,0 +1,238 @@
+footer {
+    background: url(../img/footer-bg.jpg) no-repeat center;
+    background-size: cover;
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-block: 15vh 25vh !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer__links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: calc(30px + 2vh);
+}
+
+.footer__links a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .75rem;
+    font-weight: 700;
+    color: var(--quick-silver);
+    position: relative;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease;
+}
+
+.footer__links a:hover {
+    color: var(--gold-crayola);
+}
+
+.footer__links a:before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    border-top: 1px solid var(--gold-crayola);
+    border-bottom: 1px solid var(--gold-crayola);
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.footer__links a:hover:before {
+    width: 100%;
+    opacity: 1;
+}
+
+.getInToch {
+    width: 450px;
+    padding-block: 15vh;
+    background-image: url(../img/footer-form-bg.png);
+    background-size: cover;
+    background-color: var(--smoky-black-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.getInToch:after, .getInToch:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: var(--smoky-black-1);
+    background-image: url(../img/footer-form-pattern.svg);
+    background-clip: border-box;
+}
+
+.getInToch:before { left: -20px }
+.getInToch:after { right: -20px }
+
+.getInToch img {
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+
+.getInToch .text {
+    font-size: 1rem;
+    color: var(--quick-silver);
+    margin: 7px 0;
+    transition: .3s ease;
+}
+
+.getInToch > a:hover {
+    color: var(--gold-crayola);
+}
+
+.footer-separator {
+    display: flex;
+    gap: 2px;
+    margin: 40px 0;
+    pointer-events: none;
+}
+
+.footer-separator span {
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--gold-crayola);
+    transform: rotate(45deg);
+    animation: rotate360 10s ease infinite alternate;
+}
+
+.getInToch h2 {
+    font-size: calc(1.25rem + 1vw) !important;
+    margin: 0 0 5px 0;
+}
+
+.getInToch h3 {
+    display: inline;
+    gap: 5px;
+    color: var(--quick-silver);
+    font-size: .9rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.getInToch h3 span {
+    color: var(--white);
+    display: inline;
+}
+
+.subscribe {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    position: relative;
+}
+
+.subscribe input {
+    min-width: calc(200px - 40px);
+    max-width: 250px;
+    padding-left: 40px;
+    padding-block: 20px;
+    flex-grow: 1;
+    color: var(--white);
+    background: var(--eerie-black-2);
+    border: 1px solid var(--white-alpha-10);
+    transition: .25s ease;
+}
+.subscribe input::placeholder { opacity: 1; color: var(--white); }
+.subscribe input:focus { border-color: var(--gold-crayola); }
+
+.subscribe ion-icon {
+    position: absolute;
+    left: 12px;
+    top: 22px;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.subscribe button {
+    height: auto;
+}
+
+.credits { 
+    display: inline !important;
+    position: absolute;
+    bottom: 40px;
+    width: calc(90vw - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding-inline: 30px;
+}
+
+.credits a {
+    color: var(--gold-crayola);
+    text-decoration: underline;
+    display: inline !important;
+}
+
+@media screen and (max-width: 950px) {
+    footer {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .footer__links:first-child {
+        display: none;
+    }
+
+    .footer__links {
+        margin: 50px 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 75%;
+        justify-content: center;
+    }
+
+    .getInToch {
+        width: 90%;
+        padding-inline: 2%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .getInToch:after, .getInToch::before {
+        width: 10px;
+    }
+
+    .getInToch:before { left: -10px }
+    .getInToch:after { right: -10px }
+    
+    .subscribe {
+        flex-direction: column;
+        width: 80%;
+        min-width: 300px;
+        gap: 20px;
+    }
+
+    .subscribe button {
+        width: 100%;
+        height: 50px;
+    }
+
+    .subscribe ion-icon {
+        top: 17px;
+    }
+    
+    .subscribe input {
+        max-width: calc(100% - 44px);
+        padding-block: 15px;
+    }
+
+    .footer__links {
+        flex-direction: column;
+    }
+}
