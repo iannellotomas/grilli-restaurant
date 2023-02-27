@@ -1,0 +1,178 @@
+.about {
+    background: var(--eerie-black-1);
+    color: var(--white);
+    display: flex;
+    padding-top: 15vh;
+    padding-bottom: 25vh;
+}
+
+.about__image {
+    width: calc(50% - 40px);
+    height: calc(max-content - 40px);
+    padding: 20px;
+    background: url('../img/about-banner.jpg') no-repeat top;
+    background-clip: content-box;
+    background-size: cover;
+    position: relative;
+}
+
+.about picture {
+    position: absolute;
+    left: -20px;
+    bottom: 20px;
+    width: 300px;
+    height: 400px;
+    max-height: max-content;
+    min-height: max-content;
+    background-clip: content-box;
+    transform: translate(-50px, 100px);
+    pointer-events: none;
+}
+
+.badge {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: -30px;
+    pointer-events: none;
+}
+
+.badge img {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.badge img:nth-child(2) {
+    animation: rotate360 10s linear infinite;
+}
+
+.about__info {
+    width: 50%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about .subtitle:after {
+    left: -60%;
+}
+
+.about .paragraph {
+    width: calc(70% - 30px);
+    padding-right: 30px;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    font-size: 1.1rem;
+}
+
+.about .highlight {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+strong {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--gold-crayola);
+}
+
+.about strong, aside strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    margin: 0 0 40px 0;
+}
+
+.about strong:before, aside strong:before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    border-top: 1px solid var(--gold-crayola);
+    border-bottom: 1px solid var(--gold-crayola);
+    transition: .5s ease;
+}
+
+.about strong:hover:before,
+aside strong:hover:before {
+    width: 100%;
+}
+
+@media screen and (max-width: 950px) {
+    .about {
+        flex-direction: column;
+        align-items: center;
+        gap: 10vh;
+        padding-bottom: 20vh;
+    }
+
+    .about .paragraph {
+        width: 90%;
+        padding-right: 0;
+    }    
+
+    .about__info {
+        width: 100%;
+        min-height: max-content;
+    }
+
+    .about__image {
+        width: calc(90% - 80px);
+        height: calc(700px - 20vw);
+        padding: 20px 20px 20px 60px;
+    }
+
+    .about picture {
+        left: -30px;
+        bottom: -100px;
+        transform: scale(.8);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .about__image {
+        width: calc(90% - 40px);
+        height: calc(500px - 10vw);
+        padding: 0 20px 0 20px;
+    }
+
+    .about picture {
+        left: -70px;
+        bottom: -140px;
+        transform: scale(.6);
+    }
+
+    .badge {
+        transform: scale(.8);
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about__image {
+        width: calc(90%);
+        height: calc(500px - 5vw);
+        padding: 0;
+    }
+
+    .about__info {
+        width: calc(100% - 40px);
+        padding: 0 20px;
+    }
+
+    .about .paragraph {
+        hyphens: auto;
+        font-size: 1rem !important;
+        line-height: 1.8rem !important;
+    }
+}
